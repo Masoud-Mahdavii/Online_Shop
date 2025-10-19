@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f7fb;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======== Layout ======== */
+#sidebar {
+    width: 220px;
+    background: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    float: left;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#main {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* ======== Sidebar ======== */
+#sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 5px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin: 8px 0;
+}
+
+#sidebar ul li.selected a {
+    font-weight: bold;
+    color: #fff;
+    background-color: #1a73e8;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* ======== Product List ======== */
+.product_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item a {
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+}
+
+.item a:hover {
+    color: #1a73e8;
+}
+
+.item br {
+    display: none;
+}
+
+.item span,
+.item p,
+.item .price {
+    color: #555;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #main {
+        margin-left: 0;
+    }
+}
