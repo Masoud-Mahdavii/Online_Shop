@@ -1,0 +1,168 @@
+.cart {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* برای responsive scroll */
+}
+
+.cart thead th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.cart tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.cart tbody tr:hover {
+    background-color: #f8f9fa; /* Hover effect برای row */
+}
+
+.cart tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Image Styles */
+.cart img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Number Classes (prices) */
+.num {
+    text-align: right;
+    font-family: 'Courier New', monospace; /* monospace برای اعداد */
+    font-weight: bold;
+    color: #28a745; /* سبز برای قیمت */
+}
+
+/* Total Row */
+.cart tr.total {
+    background-color: #e9ecef;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.cart tr.total td {
+    padding: 15px;
+    border-top: 2px solid #dee2e6;
+}
+
+.cart tr.total .num {
+    color: #dc3545; /* قرمز برای total */
+    font-size: 1.2em;
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.button.light {
+    background-color: #6c757d;
+}
+
+.button.light:hover {
+    background-color: #545b62;
+}
+
+/* Form Submit Button in Table */
+.cart input[type="submit"].button {
+    padding: 8px 12px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Text Right Alignment */
+.text-right {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart {
+        font-size: 14px;
+        overflow-x: auto; /* Scroll horizontal در موبایل */
+        display: block;
+    }
+    
+    .cart thead,
+    .cart tbody,
+    .cart th,
+    .cart td,
+    .cart tr {
+        display: block;
+    }
+    
+    .cart thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .cart tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .cart td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        white-space: nowrap;
+    }
+    
+    .cart td:before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    /* Add data-label to td in template if needed, e.g., <td data-label="Image"> */
+    .text-right {
+        text-align: center;
+    }
+    
+    .button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
