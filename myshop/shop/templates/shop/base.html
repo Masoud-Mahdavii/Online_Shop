@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
         <title>{% block title %}My Shop{% endblock title %}</title>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
@@ -19,7 +18,7 @@
                         <a href="{% url 'cart:cart_detail' %}">
                             {{ total_items }} item{{ total_items|pluralize}}, ${{ cart.get_total_price }}
                         </a>
-                    {% else %}
+                    {% elif not order %}
                         Your cart is empty.
                     {% endif %}
                 {% endwith %}
